@@ -1,0 +1,74 @@
+﻿@model HomeIndexVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="MainPhoto"></label>
+                                <input type="file" multiple name="MainPhotos" id="MainPhoto" class="form-control" />
+                                <span  asp-validation-for="Image.MainPhoto" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.Name"></label>
+                                <input asp-for="Product.Name" class="form-control">
+                                <span asp-validation-for="Product.Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.Price"></label>
+                                <input asp-for="Product.Price" class="form-control">
+                                <span asp-validation-for="Product.Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.HasDiscount"></label>
+                                <input asp-for="Product.HasDiscount" class="form-control">
+                                <span asp-validation-for="Product.HasDiscount" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.DiscountedPrice"></label>
+                                <input asp-for="Product.DiscountedPrice" class="form-control">
+                                <span asp-validation-for="Product.DiscountedPrice" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.Height"></label>
+                                <input asp-for="Product.Height" class="form-control">
+                                <span asp-validation-for="Product.Height" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.Width"></label>
+                                <input asp-for="Product.Width" class="form-control">
+                                <span asp-validation-for="Product.Width" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.Length"></label>
+                                <input asp-for="Product.Length" class="form-control">
+                                <span asp-validation-for="Product.Length" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product.CategoryId">Category</label>
+                                <select class="form-control" asp-for="Product.CategoryId" asp-items="ViewBag.Categories as SelectList"></select>
+                                <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                            </div>
+                            <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit" />
+                            <a asp-action="Index" class="btn btn-primary btn-block btn-lg mt-3">Back to Index</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+

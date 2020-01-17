@@ -1,0 +1,32 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+                        <form method="post">
+                            <div class="form-group my-3">
+                                <label>Image</label>
+                                <img src="~/img/feature/@Model.CategoryImage" width="200" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" readonly class="form-control">
+                            </div>
+                            <div class="alert alert-danger">
+                                Are you sure to delete this Category?
+                            </div>
+
+                            <input type="submit" class="btn btn-danger btn-lg btn-block" value="Delete" />
+                            <a asp-action="Index" class="btn btn-primary btn-block btn-lg mt-3">Back to Index</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

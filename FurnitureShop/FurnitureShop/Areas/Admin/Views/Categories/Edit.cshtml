@@ -1,0 +1,48 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+                        <form method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="CategoryPhoto"></label>
+                                <input asp-for="CategoryPhoto" class="form-control" />
+                                <span asp-validation-for="CategoryPhoto" class="text-danger"></span>
+                            </div>
+                            <div class="form-group my-3">
+                                <label>Current image</label>
+                                <img src="~/img/feature/@Model.CategoryImage" width="200" />
+                                <input type="hidden" name="Image" value="@Model.CategoryImage"/>
+                            </div>
+                            <div class="form-group">
+                                <span asp-validation-for="Name" class="text-danger mt-5"></span>
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control">
+                            </div>
+
+                            <input type="submit" class="btn btn-success btn-lg btn-block" value="Update" />
+
+                            <a asp-action="Index" class="btn btn-primary btn-block btn-lg mt-3">Back to Index</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+

@@ -1,0 +1,59 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="login_part padding_top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                        <h2>New to our Shop?</h2>
+                        <p>
+                            There are advances being made in science and technology
+                            everyday, and a good example of this is the
+                        </p>
+                        <a asp-controller="Account" asp-action="Register" class="btn_3">Create an Account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3>
+                            Welcome Back ! <br>
+                            Please Sign in now
+                        </h3>
+                        <form class="row contact_form" method="POST">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-md-12 form-group p_star">
+                                <label class="control-label" asp-for="EmailOrUsername"></label>
+                                <input asp-for="EmailOrUsername" class="form-control">
+                                <span asp-validation-for="EmailOrUsername" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <label class="control-label" asp-for="Password"></label>
+                                <input asp-for="Password" class="form-control">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account d-flex align-items-center">
+                                    <label class="control-label d-inline" asp-for="RememberMe"> </label>
+                                    <input asp-for="RememberMe" class="d-inline form-control">
+                                </div>
+                                <button type="submit" value="submit" class="btn_3">
+                                    log in
+                                </button>
+                                <a asp-controller="Account" asp-action="ForgotPassword" class="btn btn-link d-block my-4">
+                                    Forgot Password?
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

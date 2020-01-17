@@ -1,0 +1,68 @@
+﻿@model HomeIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+
+                        <table class="table-bordered table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>HasDiscount</th>
+                                    <th>Discounted Price</th>
+                                    <th>Height</th>
+                                    <th>Width</th>
+                                    <th>Length</th>
+                                    <th>Category</th>
+                                    <th>
+                                        <a asp-action="Create" class="btn btn-outline-success btn-sm">
+                                            Create New Product
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var pro in Model.Products)
+                                {
+                                <tr>
+                                    <td>
+                                        <img src="~/img/product/@pro.Images.FirstOrDefault(v=>v.ProductId==pro.Id).MainImage" width="150" />
+                                    </td>
+                                    <td>@pro.Name</td>
+                                    <td>@pro.Price</td>
+                                    <td>@pro.HasDiscount</td>
+                                    <td>@pro.DiscountedPrice</td>
+                                    <td>@pro.Height</td>
+                                    <td>@pro.Width</td>
+                                    <td>@pro.Length</td>
+                                    <td>@pro.CategoryId</td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@pro.Id" class="btn btn-warning">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        @*@if (Model.Count() > 2)
+            {*@
+                                        <a asp-action="Delete" asp-route-id="@pro.Id" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                        @*}*@
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
